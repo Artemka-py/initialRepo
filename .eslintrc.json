@@ -1,0 +1,104 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2020": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb/hooks",
+    "airbnb-typescript",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:prettier/recommended",
+    "plugin:import/recommended"
+  ],
+  "ignorePatterns": [
+    "dist",
+    ".eslintrc.cjs",
+    "vite.config.ts",
+    "jest.config.ts"
+  ],
+  // Specifying Parser
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "tsconfigRootDir": ".",
+    "project": [
+      "./tsconfig.json"
+    ]
+  },
+  // Configuring third-party plugins
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "react-refresh"
+  ],
+  // Resolve imports
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "project": "./tsconfig.json"
+      }
+    },
+    "react": {
+      "version": "18.x"
+    }
+  },
+  "rules": {
+    "import/no-unresolved": "error",
+    "react/no-unescaped-entities": 0,
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "no-unused-vars": "off",
+    "no-extra-boolean-cast": 0,
+    "react/no-unknown-property": "off",
+    "no-console": "error",
+    "no-debugger": "error",
+    "import/prefer-default-export": "off",
+    "import/extensions": "off",
+    "import/no-extraneous-dependencies": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
+    "spaced-comment": [
+      "error",
+      "always",
+      {
+        "line": {
+          "markers": [
+            "#region",
+            "#endregion"
+          ]
+        }
+      }
+    ],
+    "linebreak-style": "off",
+    // Disallow the `any` type.
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "extendDefaults": true,
+        "types": {
+          "{}": false
+        }
+      }
+    ],
+    // Enforce the use of the shorthand syntax.
+    "object-shorthand": "error",
+    "react-refresh/only-export-components": [
+      "warn",
+      {
+        "allowConstantExport": true
+      }
+    ],
+    "import/default": "off"
+  }
+}
